@@ -1,0 +1,7 @@
+__pycache__
+.vscode
+compose_configs
+.env
+Dockerfile
+Dockerfile.dev
+docker-compose.yml

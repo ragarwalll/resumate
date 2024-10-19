@@ -1,0 +1,12 @@
+# poetry specific files
+__pypackages__/
+poetry.lock
+
+# build specific files
+build/
+dist/
+
+# python specific files
+*.pyc
+__pycache__
+.env

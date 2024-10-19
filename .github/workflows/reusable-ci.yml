@@ -1,0 +1,139 @@
+name: shared
+
+on:
+  workflow_call:
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE20: true
+
+jobs:
+  lint-server:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./server
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+    - name: Install Poetry
+      uses: snok/install-poetry@v1
+    - name: Install dependencies
+      run: poetry install
+    - name: Run pylint
+      run: poetry run pylint **/*.py
+
+  format-server:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./server
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+    - name: Install Poetry
+      uses: snok/install-poetry@v1
+    - name: Install dependencies
+      run: poetry install
+    - name: Run black
+      run: poetry run black --check .
+
+  # test-server:
+  #   runs-on: ubuntu-latest
+  #   defaults:
+  #     run:
+  #       working-directory: ./server
+  #   steps:
+  #   - uses: actions/checkout@v3
+  #   - name: Set up Python
+  #     uses: actions/setup-python@v4
+  #     with:
+  #       python-version: '3.x'
+  #   - name: Install Poetry
+  #     uses: snok/install-poetry@v1
+  #   - name: Install dependencies
+  #     run: poetry install
+  #   - name: Run tests
+  #     run: poetry run pytest
+
+  lint-ui:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./ui
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Bun
+      uses: oven-sh/setup-bun@v1
+    - name: Install dependencies
+      run: bun install
+    - name: Run ESLint
+      run: bun run lint:scan
+
+  # test-ui:
+  #   runs-on: ubuntu-latest
+  #   defaults:
+  #     run:
+  #       working-directory: ./ui
+  #   steps:
+  #   - uses: actions/checkout@v3
+  #   - name: Set up Bun
+  #     uses: oven-sh/setup-bun@v1
+  #   - name: Install dependencies
+  #     run: bun install
+  #   - name: Run tests
+  #     run: bun test
+
+  next-build-ui:
+    needs: [lint-ui]
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./ui
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Bun
+      uses: oven-sh/setup-bun@v1
+    - name: Install dependencies
+      run: bun install
+    - name: Build UI
+      run: bun run build
+
+  poetry-build-server:
+    needs: [lint-server, format-server]
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./server
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+    - name: Install Poetry
+      uses: snok/install-poetry@v1
+    - name: Install dependencies
+      run: poetry install
+    - name: Build server
+      run: poetry build
+
+  docker-build-ui:
+    needs: [lint-ui]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build UI Docker image
+      run: docker build -t resumate-ui ./ui
+  docker-build-server:
+    needs: [lint-server, format-server]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build server Docker image
+      run: docker build -t resumate-server ./server

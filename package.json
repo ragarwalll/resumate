@@ -1,0 +1,40 @@
+{
+  "name": "resumate",
+  "version": "0.0.0",
+  "description": "Resumate is an innovative AI-powered resume customization tool",
+  "main": "index.js",
+  "scripts": {
+    "prepare": "husky",
+    "release": "standard-version",
+    "release:minor": "standard-version --release-as minor",
+    "release:patch": "standard-version --release-as patch",
+    "release:major": "standard-version --release-as major",
+    "commit:lint": "commitlint --edit",
+    "code:lint": "cd ui && bun lint:scan"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ragarwalll/resumate.git"
+  },
+  "keywords": [],
+  "author": "ragarwalll <agarwal.rahul324@gmail.com>",
+  "license": "Apache-2.0",
+  "packageManager": "^bun@1.1.0",
+  "engineStrict": true,
+  "engines": {
+    "npm": ">=10.0.0",
+    "node": ">=20.0.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "^19.5.0",
+    "husky": "^9.1.6",
+    "replace": "^1.2.2",
+    "standard-version": "^9.5.0"
+  },
+  "standard-version": {
+    "skip": {
+      "tag": true
+    }
+  }
+}

@@ -1,0 +1,9 @@
+# node specifc files
+node_modules
+
+# bun specific files
+bun.lock
+bun.lockb
+
+# mac specific files
+.DS_Store

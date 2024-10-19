@@ -1,0 +1,5 @@
+# node specifc files
+node_modules
+
+# mac specific files
+.DS_Store

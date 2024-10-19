@@ -1,0 +1,22 @@
+ARG PYTHON_VERSION=3.12.6
+
+FROM python:${PYTHON_VERSION}-slim
+LABEL maintainer="Rahul Agarwal <agarwal.rahul324@gmail.com>"
+
+WORKDIR /app
+
+RUN apt-get update && apt-get install -y \
+    gcc \
+    && rm -rf /var/lib/apt/lists/* \
+    && pip install --no-cache-dir poetry debugpy
+
+COPY pyproject.toml poetry.lock* ./
+
+RUN poetry config virtualenvs.create false \
+    && poetry install --no-interaction --no-ansi
+
+COPY . .
+
+EXPOSE 5000 5678
+
+CMD ["python", "-m", "debugpy", "--listen", "0.0.0.0:5678", "--wait-for-client", "-m", "flask", "run", "--host=0.0.0.0"]

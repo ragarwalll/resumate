@@ -1,0 +1,39 @@
+name: release
+
+on:
+  push:
+    branches: [ 'rel@*' ]
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE20: true
+
+jobs:
+  ci:
+    uses: ./.github/workflows/reusable-ci.yml
+
+  deploy:
+    needs: ci
+    runs-on: ubuntu-latest
+    steps:
+    - name: Deploy to production
+      run: echo "Deploying to production environment"
+
+  release:
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+    - name: Get version from branch name
+      id: get_version
+      run: echo ::set-output name=VERSION::${GITHUB_REF#refs/heads/rel@}
+    - name: Create Release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: v${{ steps.get_version.outputs.VERSION }}
+        release_name: Release ${{ steps.get_version.outputs.VERSION }}
+        draft: false
+        prerelease: false

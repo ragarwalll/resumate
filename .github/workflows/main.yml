@@ -1,0 +1,21 @@
+name: main
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE20: true
+
+jobs:
+  ci:
+    uses: ./.github/workflows/reusable-ci.yml
+
+  deploy:
+    needs: ci
+    runs-on: ubuntu-latest
+    steps:
+    - name: Deploy to staging
+      run: echo "Deploying to staging environment"

@@ -13,7 +13,7 @@ jobs:
       run:
         working-directory: ./server
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
@@ -31,7 +31,7 @@ jobs:
       run:
         working-directory: ./server
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
@@ -49,7 +49,7 @@ jobs:
   #     run:
   #       working-directory: ./server
   #   steps:
-  #   - uses: actions/checkout@v3
+  #   - uses: actions/checkout@v4
   #   - name: Set up Python
   #     uses: actions/setup-python@v4
   #     with:
@@ -67,7 +67,7 @@ jobs:
       run:
         working-directory: ./ui
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Set up Bun
       uses: oven-sh/setup-bun@v1
     - name: Install dependencies
@@ -81,7 +81,7 @@ jobs:
   #     run:
   #       working-directory: ./ui
   #   steps:
-  #   - uses: actions/checkout@v3
+  #   - uses: actions/checkout@v4
   #   - name: Set up Bun
   #     uses: oven-sh/setup-bun@v1
   #   - name: Install dependencies
@@ -96,7 +96,7 @@ jobs:
       run:
         working-directory: ./ui
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Set up Bun
       uses: oven-sh/setup-bun@v1
     - name: Install dependencies
@@ -111,7 +111,7 @@ jobs:
       run:
         working-directory: ./server
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
@@ -127,13 +127,13 @@ jobs:
     needs: [lint-ui]
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Build UI Docker image
       run: docker build -t resumate-ui ./ui
   docker-build-server:
     needs: [lint-server, format-server]
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Build server Docker image
       run: docker build -t resumate-server ./server

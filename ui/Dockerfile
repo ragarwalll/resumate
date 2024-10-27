@@ -21,6 +21,8 @@ ENV PATH="${PATH}:/root/.bun/bin"
 #
 COPY bun.lockb package.json ./
 
+RUN bun install
+
 # Copy the application sources into the build stage
 COPY . .
 

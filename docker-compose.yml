@@ -19,6 +19,7 @@ services:
       logging_jobname: "server"
     profiles:
       - server
+      - all
 
   frontend:
     build:
@@ -33,6 +34,7 @@ services:
       logging_jobname: "ui"
     profiles:
       - ui
+      - all
 
 
   grafana:
@@ -47,6 +49,7 @@ services:
     profiles:
       - server
       - ui
+      - all
 
   loki:
     image: grafana/loki:latest
@@ -58,6 +61,7 @@ services:
     profiles:
       - server
       - ui
+      - all
 
   promtail:
     image:  grafana/promtail:latest
@@ -70,6 +74,7 @@ services:
     profiles:
       - server
       - ui
+      - all
 
 volumes:
   grafana-data:

@@ -41,7 +41,7 @@
     "@react-aria/visually-hidden": "3.8.12",
     "babel-plugin-react-compiler": "^19.0.0-beta-8a03594-20241020",
     "clsx": "2.1.1",
-    "framer-motion": "~11.1.1",
+    "framer-motion": "~11.11.11",
     "intl-messageformat": "^10.5.0",
     "next": "15.0.1",
     "next-intl": "^3.21.1",

@@ -43,7 +43,7 @@
     "clsx": "2.1.1",
     "framer-motion": "~11.11.17",
     "intl-messageformat": "^10.5.0",
-    "next": "15.0.1",
+    "next": "15.1.0",
     "next-intl": "^3.21.1",
     "next-themes": "^0.2.1",
     "react": "19.0.0-rc-69d4b800-20241021",

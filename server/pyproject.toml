@@ -9,7 +9,7 @@ license = "Apache-2.0"
 [tool.poetry.dependencies]
 python = "^3.12"
 flask = "^3.0.3"
-structlog = "^24.4.0"
+structlog = "^25.1.0"
 python-dotenv = "^1.0.1"
 orjson = "^3.10.9"
 pygments = "^2.18.0"

@@ -22,7 +22,7 @@ COPY pyproject.toml poetry.lock* /app/
 
 # Project initialization:
 RUN poetry config virtualenvs.create false \
-    && poetry install --no-interaction --no-ansi --no-root --no-dev
+    && poetry install --no-interaction --no-ansi --no-root --only main
 
 # Explicitly install Gunicorn
 RUN pip install gunicorn
@@ -31,7 +31,7 @@ RUN pip install gunicorn
 COPY . /app
 
 # Install project
-RUN poetry install --no-interaction --no-ansi --no-dev
+RUN poetry install --no-interaction --no-ansi --only main
 
 # Make sure scripts in .local are usable:
 ENV PATH=/root/.local/bin:$PATH

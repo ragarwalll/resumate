@@ -71,6 +71,6 @@
     "postcss": "8.4.38",
     "tailwind-variants": "0.1.20",
     "tailwindcss": "4.1.11",
-    "typescript": "5.0.4"
+    "typescript": "5.8.3"
   }
 }

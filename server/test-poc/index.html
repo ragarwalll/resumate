@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Inline Canvas Editor</title>
+  <script src="https://cdn.jsdelivr.net/npm/konva@9/konva.min.js"></script>
+  <style>
+    body { margin: 0; }
+    #container { border: 1px solid #ccc; }
+    .konvajs-content {
+      position: relative;
+    }
+    .edit-box {
+      position: absolute;
+      border: 1px solid #ccc;
+      background: white;
+      font-size: 14px;
+      padding: 2px;
+      z-index: 10;
+    }
+  </style>
+</head>
+<body>
+
+<div id="container"></div>
+
+<script>
+  fetch('data.json')
+    .then(res => res.json())
+    .then(jsonData => renderCanvas(jsonData))
+    .catch(err => console.error('Error loading JSON:', err));
+
+  function renderCanvas(pagesData) {
+    const stage = new Konva.Stage({
+      container: 'container',
+      width: window.innerWidth,
+      height: window.innerHeight
+    });
+
+    const layer = new Konva.Layer();
+    stage.add(layer);
+
+    const page = pagesData.find(p => p.page === 1);
+
+    if (!page) {
+      console.warn('Page 1 not found.');
+      return;
+    }
+
+    page.elements.forEach((el) => {
+      const [x0, y0] = el.bbox;
+
+      const textNode = new Konva.Text({
+        x: x0,
+        y: y0,
+        text: el.text,
+        fontSize: el.size,
+        fontFamily: el.font,
+        fill: 'black',
+        draggable: true
+      });
+
+      textNode.on('dragend', () => {
+        console.log(`Moved: ${el.text} to (${textNode.x()}, ${textNode.y()})`);
+        el.bbox[0] = textNode.x();
+        el.bbox[1] = textNode.y();
+      });
+
+      textNode.on('dblclick', () => {
+        createTextEditor(textNode, el);
+      });
+
+      layer.add(textNode);
+    });
+
+    layer.draw();
+
+    function createTextEditor(textNode, el) {
+      const stageBox = stage.container().getBoundingClientRect();
+      const textPosition = textNode.absolutePosition();
+
+      const area = document.createElement('input');
+      document.body.appendChild(area);
+
+      area.value = textNode.text();
+      area.className = 'edit-box';
+
+      area.style.top = `${stageBox.top + textPosition.y}px`;
+      area.style.left = `${stageBox.left + textPosition.x}px`;
+      area.style.width = `${textNode.width() + 20}px`;
+
+      area.focus();
+
+      area.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === 'Escape') {
+          area.remove();
+        }
+      });
+
+      area.addEventListener('blur', function() {
+        textNode.text(area.value);
+        el.text = area.value;
+        area.remove();
+      });
+    }
+  }
+</script>
+
+</body>
+</html>

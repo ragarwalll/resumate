@@ -3,6 +3,7 @@
 import atexit
 from flask import Flask
 import structlog
+from flask_restx import Api
 
 from .constants import ENV_DEVELOPMENT
 from .utils import remove_tmp_dir, TMP_DIR
@@ -11,12 +12,14 @@ from .config import Config as DefaultConfig, config_by_name as config_name_dict
 from .configs.logger.default_json_logger import set_default_logger
 from .configs.logger.struct_json_logger import configure_logging
 
+from .routes import process_ns, health_ns
+
 
 # define the application factory
 __all__ = ["create_app"]
 
 # define the default blueprints
-DEFAULT_BLUEPRINTS = ()
+DEFAULT_BLUEPRINTS = []
 
 
 def create_app(
@@ -49,6 +52,7 @@ def create_app(
     configure_blueprints(app, blueprints)
     configure_error_handlers(app)
     configure_lifecycle_handler(app)
+    configure_routes(app)
 
     return app
 
@@ -127,3 +131,20 @@ def configure_lifecycle_handler(_: Flask):
         app (Flask): The Flask application.
     """
     atexit.register(remove_tmp_dir)
+
+
+def configure_routes(app: Flask):
+    """Configure the swagger handler.
+
+    Args:
+        app (Flask): The Flask application.
+    """
+    api = Api(
+        app,
+        title="Resumate API",
+        version="1.0",
+        description="API Documentation for Resumate",
+        doc="/docs",
+    )
+    api.add_namespace(health_ns)
+    api.add_namespace(process_ns)

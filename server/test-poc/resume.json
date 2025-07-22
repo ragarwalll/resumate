@@ -1,0 +1,547 @@
+{
+  "$schema": "https://therahulagarwal.com/rahul-resume/assets/json/rahul-resume-schema.json",
+  "firstName": "Mohit",
+  "middleName": "",
+  "lastName": "Agarwal",
+  "preset": "carlito",
+  "spacing": "ultra",
+  "showLastUpdated": true,
+  "links": [
+    {
+      "text": "github.com/mohit20",
+      "href": "https://github.com/mohit20"
+    },
+    {
+      "text": "agarwal.mohit421@gmail.com",
+      "href": "mailto:agarwal.mohit421@gmail.com"
+    }
+  ],
+  "resume": {
+    "sections": [
+      {
+        "heading": "Experience",
+        "column": 1,
+        "subsections": [
+          {
+            "heading": "Doola",
+            "info": {
+              "title": "Senior Software Engineer",
+              "sameLine": true
+            },
+            "metadata": {
+              "duration": "July 2023 - Present",
+              "location": "Remote"
+            },
+            "content": {
+              "type": "list",
+              "items": [
+                {
+                  "segments": [
+                    {
+                      "text": "Engineered a high-volume transaction processing service using"
+                    },
+                    {
+                      "text": "Java, Spring Boot, MySQL, MongoDB, GraphQL, ActiveMQ, Node.js",
+                      "style": {
+                        "bold": true
+                      }
+                    },
+                    {
+                      "text": ", supporting 100K+ users with seamless transaction synchronization."
+                    }
+                  ]
+                },
+                {
+                  "segments": [
+                    {
+                      "text": "Designed a tax-filing workflow automation system with"
+                    },
+                    {
+                      "text": "Java, REST API, Messaging Queue, Node.js",
+                      "style": {
+                        "bold": true
+                      }
+                    },
+                    {
+                      "text": ", increasing efficiency by 90% by replacing manual processes."
+                    }
+                  ]
+                },
+                {
+                  "segments": [
+                    {
+                      "text": "Developed a scalable microservice for document management using"
+                    },
+                    {
+                      "text": "AWS SQS, AWS S3, MySQL, Java, Spring",
+                      "style": {
+                        "bold": true
+                      }
+                    },
+                    {
+                      "text": ", simplifying access and adding digital signature support."
+                    }
+                  ]
+                },
+                {
+                  "segments": [
+                    {
+                      "text": "Led migration from AWS CDK to"
+                    },
+                    {
+                      "text": "Terraform",
+                      "style": {
+                        "bold": true
+                      }
+                    },
+                    {
+                      "text": ", improving cloud cost visibility and infrastructure maintainability."
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "heading": "AlmaBetter",
+            "info": {
+              "title": "Software Engineer",
+              "sameLine": true
+            },
+            "metadata": {
+              "duration": "July 2022 - July 2023",
+              "location": "Bangalore"
+            },
+            "content": {
+              "type": "list",
+              "items": [
+                {
+                  "segments": [
+                    {
+                      "text": "Architected a scalable Learning Management Platform using"
+                    },
+                    {
+                      "text": "Node.js, MySQL, AWS Lambda, Strapi CMS",
+                      "style": {
+                        "bold": true
+                      }
+                    },
+                    {
+                      "text": ", serving 5L+ users and replacing legacy Thinkific system."
+                    }
+                  ]
+                },
+                {
+                  "segments": [
+                    {
+                      "text": "Reduced API latency by 40% by implementing caching with"
+                    },
+                    {
+                      "text": "Redis",
+                      "style": {
+                        "bold": true
+                      }
+                    },
+                    {
+                      "text": "and integrating third-party services like Sertifier, LeadSquared, and WebEngage."
+                    }
+                  ]
+                },
+                {
+                  "segments": [
+                    {
+                      "text": "Improved code quality with comprehensive logging and asynchronous task handlers using"
+                    },
+                    {
+                      "text": "AWS Lambda, Node.js, AWS SQS, gRPC",
+                      "style": {
+                        "bold": true
+                      }
+                    },
+                    {
+                      "text": ", enhancing user experience."
+                    }
+                  ]
+                },
+                {
+                  "segments": [
+                    {
+                      "text": "Implemented an admin portal to centralize user data, reducing query resolution time by 30%."
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "heading": "SpringWorks",
+            "info": {
+              "title": "Software Engineer",
+              "sameLine": true
+            },
+            "metadata": {
+              "duration": "June 2021 - July 2022",
+              "location": "Remote"
+            },
+            "content": {
+              "type": "list",
+              "items": [
+                {
+                  "segments": [
+                    {
+                      "text": "Built backend infrastructure for an e-commerce platform with 2L+ monthly orders using"
+                    },
+                    {
+                      "text": "Node.js, AWS SQS, MySQL, Redis",
+                      "style": {
+                        "bold": true
+                      }
+                    },
+                    {
+                      "text": "."
+                    }
+                  ]
+                },
+                {
+                  "segments": [
+                    {
+                      "text": "Built 20+ new features using"
+                    },
+                    {
+                      "text": "Github Actions, Node.js, REST API, Swagger",
+                      "style": {
+                        "bold": true
+                      }
+                    },
+                    {
+                      "text": ", from planning to deployment."
+                    }
+                  ]
+                },
+                {
+                  "segments": [
+                    {
+                      "text": "Migrated mobile application codebase from"
+                    },
+                    {
+                      "text": "PHP to Node.js",
+                      "style": {
+                        "bold": true
+                      }
+                    },
+                    {
+                      "text": "in a microservices architecture with API Gateway."
+                    }
+                  ]
+                },
+                {
+                  "segments": [
+                    {
+                      "text": "Refactored and fixed bugs in the existing codebase."
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "heading": "Tata Consultancy Services",
+            "info": {
+              "title": "Associate Software Engineer",
+              "sameLine": true
+            },
+            "metadata": {
+              "duration": "July 2019 - June 2022",
+              "location": "Kolkata"
+            },
+            "content": {
+              "type": "list",
+              "items": [
+                {
+                  "segments": [
+                    {
+                      "text": "Devised a model for detecting grammatical/spelling errors using"
+                    },
+                    {
+                      "text": "Python, NLP, Transformers, Java",
+                      "style": {
+                        "bold": true
+                      }
+                    },
+                    {
+                      "text": "."
+                    }
+                  ]
+                },
+                {
+                  "segments": [
+                    {
+                      "text": "Built a verbatim analysis system with"
+                    },
+                    {
+                      "text": "Python, Pandas, Numpy, Regex",
+                      "style": {
+                        "bold": true
+                      }
+                    },
+                    {
+                      "text": "for code list generation and tagging."
+                    }
+                  ]
+                },
+                {
+                  "segments": [
+                    {
+                      "text": "Implemented NLP techniques for keyword extraction and semantic analysis using"
+                    },
+                    {
+                      "text": "Python, Sklearn, SpaCy, Word2vec",
+                      "style": {
+                        "bold": true
+                      }
+                    },
+                    {
+                      "text": "."
+                    }
+                  ]
+                },
+                {
+                  "segments": [
+                    {
+                      "text": "Crafted web services and APIs for models using"
+                    },
+                    {
+                      "text": "Java, Maven, REST API",
+                      "style": {
+                        "bold": true
+                      }
+                    },
+                    {
+                      "text": "."
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "heading": "Summary",
+        "column": 2,
+        "content": {
+          "type": "paragraph",
+          "text": "Senior Software Engineer with 5+ years in backend development using Java, Python, Node.js, TypeScript. Expert in microservices, REST APIs, GraphQL, AWS, Terraform, Kubernetes, with a focus on cloud optimization and CI/CD pipelines. Improved API performance by 40% and scaled high-traffic applications."
+        }
+      },
+      {
+        "heading": "Education",
+        "column": 2,
+        "subsections": [
+          {
+            "heading": "SRM Institute of Science and Technology",
+            "info": {
+              "title": "B.Tech in Computer Science",
+              "sameLine": false
+            },
+            "metadata": {
+              "location": "",
+              "duration": "July 2015 - May 2019"
+            },
+            "content": {
+              "type": "paragraph",
+              "text": ""
+            }
+          }
+        ]
+      },
+      {
+        "heading": "Skills",
+        "column": 2,
+        "columnSettings": 1,
+        "subsections": [
+          {
+            "heading": "Technical Proficiencies",
+            "content": {
+              "type": "list",
+              "style": {
+                "showBullets": false
+              },
+              "items": [
+                {
+                  "inlineList": {
+                    "separator": "•",
+                    "items": [
+                      "Java",
+                      "Python",
+                      "JavaScript",
+                      "SQL",
+                      "Data Structures",
+                      "Algorithms",
+                      "Problem Solving"
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "heading": "Core Competencies",
+            "content": {
+              "type": "list",
+              "style": {
+                "showBullets": false
+              },
+              "items": [
+                {
+                  "inlineList": {
+                    "separator": "•",
+                    "items": [
+                      "JVM",
+                      "Node.js",
+                      "Linux",
+                      "Spring Boot",
+                      "REST",
+                      "gRPC",
+                      "GraphQL",
+                      "Express.js"
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "heading": "Data & Messaging Systems",
+            "content": {
+              "type": "list",
+              "style": {
+                "showBullets": false
+              },
+              "items": [
+                {
+                  "inlineList": {
+                    "separator": "•",
+                    "items": [
+                      "PostgreSQL",
+                      "MongoDB",
+                      "Amazon DynamoDB",
+                      "Redis",
+                      "Elasticsearch"
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "heading": "Skill Domains",
+            "content": {
+              "type": "list",
+              "style": {
+                "showBullets": false
+              },
+              "items": [
+                {
+                  "inlineList": {
+                    "separator": "•",
+                    "items": [
+                      "AWS",
+                      "Terraform",
+                      "Docker",
+                      "Jenkins",
+                      "Git",
+                      "Microservices",
+                      "Distributed Systems"
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "heading": "Performance Monitoring",
+            "content": {
+              "type": "list",
+              "style": {
+                "showBullets": false
+              },
+              "items": [
+                {
+                  "inlineList": {
+                    "separator": "•",
+                    "items": [
+                      "Grafana",
+                      "Prometheus",
+                      "ELK Stack"
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "heading": "Links",
+        "column": 2,
+        "content": {
+          "type": "list",
+          "style": {
+            "showBullets": false
+          },
+          "items": [
+            {
+              "segments": [
+                { "text": "Github://" },
+                {
+                  "text": "mohit20",
+                  "href": "https://github.com/mohit20",
+                  "style": {
+                    "bold": true
+                  }
+                }
+              ]
+            },
+            {
+              "segments": [
+                { "text": "LinkedIn://" },
+                {
+                  "text": "mohit-agarwal-18a527149",
+                  "href": "https://www.linkedin.com/in/mohit-agarwal-18a527149",
+                  "style": {
+                    "bold": true
+                  }
+                }
+              ]
+            },
+            {
+              "segments": [
+                { "text": "Gmail://" },
+                {
+                  "text": "agarwal.mohit421",
+                  "href": "mailto:agarwal.mohit421@gmail.com",
+                  "style": {
+                    "bold": true
+                  }
+                }
+              ]
+            },
+            {
+              "segments": [
+                { "text": "Tel://" },
+                {
+                  "text": "+919884207960",
+                  "href": "tel:+919884207960",
+                  "style": {
+                    "bold": true
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

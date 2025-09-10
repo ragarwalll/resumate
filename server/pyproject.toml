@@ -26,7 +26,7 @@ rapidfuzz = "^3.13.0"
 pytest = "^8.3.3"
 black = "^24.10.0"
 pylint = "^3.3.1"
-pytest-cov = "^6.2.1"
+pytest-cov = "^7.0.0"
 
 [tool.pytest.ini_options]
 testpaths = ["__tests__"]
